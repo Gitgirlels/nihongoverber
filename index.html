@@ -3,7 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>動詞 — Japanese Verb Conjugator</title>
+<title>Japanese Verb Conjugator — 170+ Verbs with All Forms, Romaji &amp; Hiragana | 動詞活用</title>
+<meta name="description" content="Free Japanese verb conjugator with 170+ verbs. Look up any verb and get every conjugation form: plain, polite, te-form, potential, passive, causative, conditional, imperative — with hiragana and romaji. Perfect for JLPT N5–N3 study.">
+<meta name="keywords" content="Japanese verb conjugator, Japanese conjugation, 動詞活用, て形, masu form, Japanese grammar, JLPT study, hiragana, romaji, u-verb, ru-verb, irregular verb, Japanese verb forms, learn Japanese, 日本語動詞">
+<meta name="author" content="Doushi Machine">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Japanese Verb Conjugator — 170+ Verbs, All Forms">
+<meta property="og:description" content="Free tool to conjugate 170+ Japanese verbs. Every form: plain, polite, te-form, potential, passive, causative &amp; more — with hiragana and romaji.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Japanese Verb Conjugator — 170+ Verbs, All Forms">
+<meta name="twitter:description" content="Free tool to conjugate 170+ Japanese verbs with hiragana, romaji, and sentence patterns.">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Japanese Verb Conjugator",
+  "alternateName": "動詞活用ツール",
+  "description": "Free Japanese verb conjugator covering 170+ verbs with plain, polite, te-form, potential, passive, causative, conditional, and imperative forms. Includes hiragana readings, romaji transliteration, and sentence structure patterns.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "inLanguage": ["en", "ja"],
+  "audience": { "@type": "EducationalAudience", "educationalRole": "student" },
+  "keywords": "Japanese verb conjugation, JLPT, て形, masu form, 動詞, grammar tool"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you conjugate Japanese verbs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Japanese verbs are conjugated based on their type: u-verbs (godan), ru-verbs (ichidan), and irregular verbs (する and 来る). Each type follows different rules for forms like negative, past, te-form, potential, passive, causative, and polite (masu) forms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the te-form in Japanese?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The te-form (て形) is a versatile conjugation used to connect sentences, make requests, describe ongoing actions, and more. For u-verbs the ending changes based on the final kana (e.g. 飲む→飲んで, 書く→書いて). For ru-verbs, replace る with て (e.g. 食べる→食べて)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between u-verbs and ru-verbs?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "U-verbs (godan/group 1) end in an u-column kana and conjugate by changing the final syllable across vowel rows. Ru-verbs (ichidan/group 2) end in る preceded by an i or e sound and conjugate simply by dropping る and adding the suffix."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -12,6 +79,7 @@
 html,body,#root{height:100%}
 body{background:#0c0c0c;font-family:'JetBrains Mono','Fira Code','SF Mono','Cascadia Code',Consolas,monospace}
 input::placeholder{color:#333}
+.seo-content{display:none}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
@@ -19,6 +87,44 @@ input::placeholder{color:#333}
 </head>
 <body>
 <div id="root"></div>
+
+<!-- SEO: crawlable content for search engines (hidden when JS renders the app) -->
+<noscript>
+<article style="max-width:700px;margin:0 auto;padding:40px 20px;font-family:sans-serif;color:#ccc;background:#0c0c0c">
+<h1>Japanese Verb Conjugator — 動詞活用</h1>
+<p>A free tool to look up and conjugate over 170 Japanese verbs. See every conjugation form including plain, polite (masu), negative, past, te-form, potential, passive, causative, conditional, imperative, volitional, and tai-form — with hiragana readings and romaji transliteration.</p>
+<h2>Verb Types</h2>
+<p><strong>U-verbs (五段動詞 / Group 1):</strong> 飲む (nomu, drink), 書く (kaku, write), 話す (hanasu, speak), 買う (kau, buy), 待つ (matsu, wait), 泳ぐ (oyogu, swim), 遊ぶ (asobu, play), 死ぬ (shinu, die), 走る (hashiru, run), 作る (tsukuru, make)</p>
+<p><strong>Ru-verbs (一段動詞 / Group 2):</strong> 食べる (taberu, eat), 見る (miru, see), 寝る (neru, sleep), 教える (oshieru, teach), 考える (kangaeru, think), 忘れる (wasureru, forget), 開ける (akeru, open), 閉める (shimeru, close)</p>
+<p><strong>Irregular verbs (不規則動詞 / Group 3):</strong> する (suru, do), 来る (kuru, come), 勉強する (benkyousuru, study), 料理する (ryourisuru, cook), 結婚する (kekkonsuru, marry)</p>
+<h2>Conjugation Forms</h2>
+<h3>Example: 食べる (taberu, to eat) — ru-verb</h3>
+<p>Dictionary: 食べる (taberu) · Negative: 食べない (tabenai) · Past: 食べた (tabeta) · Te-form: 食べて (tabete) · Polite: 食べます (tabemasu) · Potential: 食べられる (taberareru) · Passive: 食べられる (taberareru) · Causative: 食べさせる (tabesaseru) · Conditional: 食べれば (tabereba) · Volitional: 食べよう (tabeyou) · Imperative: 食べろ (tabero)</p>
+<h3>Example: 飲む (nomu, to drink) — u-verb</h3>
+<p>Dictionary: 飲む (nomu) · Negative: 飲まない (nomanai) · Past: 飲んだ (nonda) · Te-form: 飲んで (nonde) · Polite: 飲みます (nomimasu) · Potential: 飲める (nomeru) · Passive: 飲まれる (nomareru) · Causative: 飲ませる (nomaseru)</p>
+<h3>Example: する (suru, to do) — irregular</h3>
+<p>Dictionary: する (suru) · Negative: しない (shinai) · Past: した (shita) · Te-form: して (shite) · Polite: します (shimasu) · Potential: できる (dekiru) · Passive: される (sareru) · Causative: させる (saseru)</p>
+<h2>Features</h2>
+<ul>
+<li>Search by English, kanji, hiragana, or romaji</li>
+<li>170+ common Japanese verbs</li>
+<li>All conjugation forms: plain, polite, te-form, potential, passive, causative, conditional, imperative, volitional, tai-form</li>
+<li>Hiragana readings and romaji for every form</li>
+<li>Sentence structure patterns showing particle usage</li>
+<li>Save favourite verbs for quick access</li>
+<li>Quiz mode to test your conjugation knowledge</li>
+<li>Works on mobile — no app install needed</li>
+</ul>
+<h2>All Verbs</h2>
+<p>食べる eat, 飲む drink, 行く go, 来る come, する do, 見る see, 聞く ask, 話す speak, 読む read, 書く write, 買う buy, 売る sell, 作る make, 使う use, 待つ wait, 歩く walk, 走る run, 泳ぐ swim, 飛ぶ fly, 寝る sleep, 起きる wake up, 教える teach, 学ぶ learn, 勉強する study, 考える think, 忘れる forget, 覚える memorise, 遊ぶ play, 会う meet, 住む live, 持つ hold, 取る take, 送る send, 届ける deliver, 払う pay, 開ける open, 閉める close, 始める start, 止める stop, 続ける continue, 決める decide, 選ぶ choose, 探す look for, 見つける find, 調べる investigate, 着る wear, 洗う wash, 切る cut, 料理する cook, 掃除する clean, 座る sit, 立つ stand, 歌う sing, 踊る dance, 笑う laugh, 泣く cry, 怒る be angry, 謝る apologise, 旅行する travel, 運動する exercise, 練習する practice, 準備する prepare, 確認する check, 予約する reserve, 注文する order, 電話する phone, 結婚する marry, 卒業する graduate, 説明する explain, 紹介する introduce, 翻訳する translate, 計画する plan, 相談する consult, 注意する give warning, プロポーズする propose, できる come into existence, and many more.</p>
+</article>
+</noscript>
+
+<!-- Hidden crawlable content (visible to search engines even with JS) -->
+<div class="seo-content">
+<h1>Japanese Verb Conjugator — Free Online Tool for 170+ Verbs | 日本語動詞活用</h1>
+<p>Conjugate Japanese verbs instantly. Covers u-verbs (godan), ru-verbs (ichidan), and irregular verbs with plain forms, polite masu forms, te-form, potential, passive, causative, conditional, volitional, imperative, and tai-form. Each conjugation includes hiragana and romaji. Ideal for JLPT N5, N4, and N3 preparation.</p>
+</div>
 <script type="text/babel">
 const{useState,useMemo,useRef,useEffect,useCallback}=React;
 
